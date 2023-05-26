@@ -7,4 +7,16 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'forms-examples';
+
+  formData = {
+    email: "caccopazzo@giga.it",
+    password: "finchèfaccio",
+    newsletter: false
+  }
+
+  formData2 = {
+    email: "caccooooooo2@giga.it",
+    password: "finchèfaccio",
+    newsletter: true
+  }
 }

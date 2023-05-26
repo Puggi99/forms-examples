@@ -1,0 +1,26 @@
+<h2>JS form</h2>
+
+<form id="{{ id }}" (submit)="submit($event)">
+  <!-- il (click) dell'input submit funzionava anche ma prendeva soltanto il click e non l'invio, la versione sopra invece comprende anche l'invio -->
+  <div>
+  <label for="email">Email: </label>
+  <input id="email" type="email" placeholder="inserire email" name="email" required>
+</div>
+
+<div>
+  <label for="password">Password: </label>
+  <input id="password" type="password" placeholder="inserire password" name="password" required minlength="4">
+</div>
+
+<div>
+  <label for="newsletter">Iscriviti alla newsletter: </label>
+  <input id="newsletter" type="checkbox" name="newsletter" value="chiappe">
+  <!-- questo, se flaggato, mi passa una stringa newsletter: "on", a meno che io non ne modifichi il value, come sopra in "chiappe" -->
+</div>
+
+<div>
+  <!-- <input type="submit" (click)="submit()"> -->
+  <input type="submit">
+  <!-- fa una chiamata http usando una query string come get ad un API -->
+</div>
+</form>
