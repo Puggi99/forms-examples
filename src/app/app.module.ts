@@ -5,16 +5,19 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HtmlFormComponent } from './html-form/html-form.component';
 import { JsFormComponent } from './js-form/js-form.component';
+import { NgModelFormComponent } from './ng-model-form/ng-model-form.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HtmlFormComponent,
-    JsFormComponent
+    JsFormComponent,
+    NgModelFormComponent,
   ],
   providers: [],
   bootstrap: [AppComponent]
