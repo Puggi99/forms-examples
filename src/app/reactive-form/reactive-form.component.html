@@ -1,0 +1,29 @@
+<h2>Angular Reactive form</h2>
+
+<form [formGroup]="formGroup" (ngSubmit)="submit()">
+<!-- ngSubmit questa è una direttiva del modulo FormsModule -->
+<!-- #myForm è una variabile in HTML -->
+<!-- voglio che dentro questa variabile ci sia il contenuto della direttiva ngForm -->
+  <div>
+  <label>Email: </label>
+  <input id="email" formControlName="email">
+  <span *ngIf="email.invalid">METTI STA MAIL ZIO</span>
+</div>
+
+<div>
+  <label>Password: </label>
+  <input type="password" formControlName="password">
+  <span *ngIf="password.invalid">PORCODUE</span>
+</div>
+
+<div>
+  <label>Iscriviti alla newsletter: </label>
+  <input type="checkbox" value="chiappe" formControlName="newsletter">
+</div>
+
+<div>
+
+  <input type="submit" [disabled]="email.invalid">
+  <span *ngIf="password.invalid && email.invalid">Questo form è stato completato in modo invalido quindi viene visualizzato</span>
+</div>
+</form>

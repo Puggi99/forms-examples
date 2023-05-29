@@ -6,10 +6,12 @@ import { AppComponent } from './app.component';
 import { HtmlFormComponent } from './html-form/html-form.component';
 import { JsFormComponent } from './js-form/js-form.component';
 import { NgModelFormComponent } from './ng-model-form/ng-model-form.component';
+import { ReactiveFormComponent } from './reactive-form/reactive-form.component';
 
 @NgModule({
   declarations: [
     AppComponent,
+    
 
   ],
   imports: [
@@ -18,6 +20,7 @@ import { NgModelFormComponent } from './ng-model-form/ng-model-form.component';
     HtmlFormComponent,
     JsFormComponent,
     NgModelFormComponent,
+    ReactiveFormComponent
   ],
   providers: [],
   bootstrap: [AppComponent]

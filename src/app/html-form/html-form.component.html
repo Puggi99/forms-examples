@@ -1,5 +1,5 @@
-<h2>HTML form</h2>
-<form action="/registration.php" method="post" onsubmit="">
+<h2>Form Exercise</h2>
+<form action="/login.php" method="post" onsubmit="">
   <div>
   <label for="">Email: </label>
   <input type="email" placeholder="inserire email" name="email" required>
@@ -13,11 +13,9 @@
 <div>
   <label for="">Iscriviti alla newsletter: </label>
   <input type="checkbox" name="newsletter" value="chiappe">
-  <!-- questo, se flaggato, mi passa una stringa newsletter: "on", a meno che io non ne modifichi il value, come sopra in "chiappe" -->
 </div>
 
 <div>
   <input type="submit">
-  <!-- fa una chiamata http usando una query string come get ad un API -->
 </div>
 </form>

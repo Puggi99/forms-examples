@@ -1,27 +1,30 @@
-<form #myForm="ngForm" (ngSubmit)="submitForm()">
-  <div>
-    <label for="email">Email: </label>
-    <input type="email" placeholder="inserire email" name="email" [(ngModel)]="data.email">
-  </div>
+<h2>Angular form</h2>
 
+<form #myForm="ngForm" ngForm (ngSubmit)="submit()">
+<!-- ngSubmit questa è una direttiva del modulo FormsModule -->
+<!-- #myForm è una variabile in HTML -->
+<!-- voglio che dentro questa variabile ci sia il contenuto della direttiva ngForm -->
   <div>
-    <label for="password">Password: </label>
-    <input [placeholder]="pass.invalid ? 'Campo non valido' : '' " #pass="ngModel" type="password" placeholder="inserire password" name="password" required minlength="4"
-      [(ngModel)]="data.password">
-    <span *ngIf="pass.invalid">
-      <span *ngIf="pass.errors?.['required']">La password non può essere vuota</span>
-      <span *ngIf="pass.errors?.['minlength']">La password deve avere almeno 4 caratteri</span>
+  <label for="email">Email: </label>
+  <input type="email"  name="email" required [(ngModel)]="data.email">
+</div>
 
-    </span>
-  </div>
+<div>
+  <label for="password">Password: </label>
+  <input #pass="ngModel" type="password" name="password" required minlength="4" [(ngModel)]="data.password" [placeholder]="pass.invalid ? 'Campo non valido' : ''">
+<span *ngIf="pass.errors?.['required']">E' necessario inserire una password</span>
+<span *ngIf="pass.errors?.['minlength']">Questa password non è abbastanza lunga</span>
+</div>
 
-  <div>
-    <label for="newsletter">Iscriviti alla newsletter: </label>
-    <input type="checkbox" name="newsletter" [(ngModel)]="data.newsletter">
-  </div>
+<div>
+  <label for="newsletter">Iscriviti alla newsletter: </label>
+  <input type="checkbox" name="newsletter" value="chiappe" [(ngModel)]="data.newsletter">
+  <!-- questo, se flaggato, mi passa una stringa newsletter: "on", a meno che io non ne modifichi il value, come sopra in "chiappe" -->
+</div>
 
-  <div>
-    <input type="submit" [disabled]="myForm.form.invalid">
-    <span *ngIf="myForm.form.invalid">Compila i dati in modo corretto</span>
-  </div>
+<div>
+
+  <input type="submit" [disabled]="myForm.form.invalid">
+  <span *ngIf="myForm.form.invalid">Questo form è stato completato in modo invalido quindi viene visualizzato</span>
+</div>
 </form>
